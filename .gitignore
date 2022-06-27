@@ -1,0 +1,3 @@
+
+# ignoring the input files from gmat, .txt
+python_scripts/data/*.txt
