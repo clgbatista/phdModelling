@@ -1,0 +1,32 @@
+Target: CBERS4A
+
+Observer: EMMN
+Start Time (UTC)            Stop Time (UTC)               Duration (s)         
+01 Jan 2000 16:28:29.000    01 Jan 2000 16:39:43.376      674.37659103    
+02 Jan 2000 04:57:05.185    02 Jan 2000 05:08:23.088      677.90241555    
+
+
+Number of events : 2
+
+
+Observer: ETA
+Start Time (UTC)            Stop Time (UTC)               Duration (s)         
+01 Jan 2000 16:29:14.169    01 Jan 2000 16:38:10.098      535.92954380    
+01 Jan 2000 18:07:42.630    01 Jan 2000 18:17:19.323      576.69317649    
+02 Jan 2000 04:58:43.486    02 Jan 2000 05:09:40.053      656.56737926    
+02 Jan 2000 06:40:32.318    02 Jan 2000 06:45:22.703      290.38503414    
+
+
+Number of events : 4
+
+
+Observer: ETC
+Start Time (UTC)            Stop Time (UTC)               Duration (s)         
+01 Jan 2000 18:11:06.888    01 Jan 2000 18:22:26.581      679.69271148    
+02 Jan 2000 04:59:25.075    02 Jan 2000 05:02:48.122      203.04705390    
+02 Jan 2000 06:34:37.766    02 Jan 2000 06:45:44.370      666.60359896    
+
+
+Number of events : 3
+
+

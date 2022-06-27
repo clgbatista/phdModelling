@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="211px" preserveAspectRatio="none" style="width:620px;height:211px;background:#FFFFFF;" version="1.1" viewBox="0 0 620 211" width="620px" zoomAndPan="magnify"><defs><filter height="300%" id="fouv2kiyulx3u" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[7d40f095148c31a5519ea1fcdd69fa07]
+cluster Validaation and Verification--><rect fill="#FFFFFF" filter="url(#fouv2kiyulx3u)" height="192" style="stroke:#000000;stroke-width:1.5;" width="601" x="7" y="7"/><path d="M208,7 L208,17.6094 L198,27.6094 L7,27.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="191" x="10" y="22.5332">Validaation and Verification</text><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="35.0938" style="stroke:#A80036;stroke-width:1.5;" width="69" x="478.5" y="45.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="55" x="485.5" y="59.957">Behaviour</text><line style="stroke:#A80036;stroke-width:1.5;" x1="479.5" x2="546.5" y1="64.5938" y2="64.5938"/><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="35.0938" style="stroke:#A80036;stroke-width:1.5;" width="103" x="488.5" y="145.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="89" x="495.5" y="159.957">ValidationActivity</text><line style="stroke:#A80036;stroke-width:1.5;" x1="489.5" x2="590.5" y1="164.5938" y2="164.5938"/><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="39.6719" style="stroke:#A80036;stroke-width:1.5;" width="140" x="313" y="143"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95" x="335.5" y="157.457">VerificationActivity</text><line style="stroke:#A80036;stroke-width:1.5;" x1="314" x2="452" y1="162.0938" y2="162.0938"/><ellipse cx="324" cy="173.0938" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="114" x="333" y="176.4746">verificationMethod: kind</text><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="35.0938" style="stroke:#A80036;stroke-width:1.5;" width="68" x="349" y="45.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="54" x="356" y="59.957">Operation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="350" x2="416" y1="64.5938" y2="64.5938"/><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="35.0938" style="stroke:#A80036;stroke-width:1.5;" width="45" x="210.5" y="45.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="217.5" y="59.957">Trace</text><line style="stroke:#A80036;stroke-width:1.5;" x1="211.5" x2="254.5" y1="64.5938" y2="64.5938"/><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="39.6719" style="stroke:#A80036;stroke-width:1.5;" width="110" x="168" y="143"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="54" x="196" y="157.457">Validation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="169" x2="277" y1="162.0938" y2="162.0938"/><ellipse cx="179" cy="173.0938" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="84" x="188" y="176.4746">validate: Boolean</text><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="39.6719" style="stroke:#A80036;stroke-width:1.5;" width="152" x="23" y="43"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="29" x="84.5" y="57.457">Verify</text><line style="stroke:#A80036;stroke-width:1.5;" x1="24" x2="174" y1="62.0938" y2="62.0938"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="140" x="29" y="76.4746">ownedOperation = getVerifies</text><rect fill="#FEFECE" filter="url(#fouv2kiyulx3u)" height="39.6719" style="stroke:#A80036;stroke-width:1.5;" width="109" x="23.5" y="143"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="48" y="157.457">Verification</text><line style="stroke:#A80036;stroke-width:1.5;" x1="24.5" x2="131.5" y1="162.0938" y2="162.0938"/><ellipse cx="34.5" cy="173.0938" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="83" x="43.5" y="176.4746">verified : boolean</text><!--MD5=[ad9bab58ed8f9432d19a1e5b1578324a]
+reverse link Behaviour to ValidationActivity--><path codeLine="23" d="M518,85.88 C518,85.88 518,145.28 518,145.28 " fill="none" id="Behaviour-backto-ValidationActivity" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="518,80.88,514,89.88,518,85.88,522,89.88,518,80.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d91e7986ba9c666172209eac0cdde69c]
+reverse link Behaviour to VerificationActivity--><path codeLine="24" d="M483.5,85.88 C483.5,85.88 483.5,163 483.5,163 C483.5,163 470.09,163 453.07,163 " fill="none" id="Behaviour-backto-VerificationActivity" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="483.5,80.88,479.5,89.88,483.5,85.88,487.5,89.88,483.5,80.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[85592b04a10d3bcfebbb08c1b6934dab]
+reverse link Operation to VerificationActivity--><path codeLine="25" d="M383,85.88 C383,85.88 383,142.87 383,142.87 " fill="none" id="Operation-backto-VerificationActivity" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="383,80.88,379,89.88,383,85.88,387,89.88,383,80.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4dd6518df212a47446321ae0a81a7966]
+reverse link Trace to Validation--><path codeLine="27" d="M233,100.88 C233,100.88 233,142.87 233,142.87 " fill="none" id="Trace-backto-Validation" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="226,100.88,233,80.88,240,100.88,226,100.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ca912d78ae0c6cbae44cae31ad50a2a9]
+reverse link Verify to Verification--><path codeLine="29" d="M78,103.24 C78,103.24 78,142.79 78,142.79 " fill="none" id="Verify-backto-Verification" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="71,103.24,78,83.24,85,103.24,71,103.24" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[42a6d388221f86004e5ea8fa067fa029]
+@startuml
+
+skinparam Linetype ortho
+
+frame "Validaation and Verification" {
+    
+    object Behaviour
+    object ValidationActivity
+    object VerificationActivity {
+        +verificationMethod: kind
+    }
+    object Operation
+    object Trace
+    object Validation {
+        +validate: Boolean
+    }
+    object Verify {
+        ownedOperation = getVerifies
+    }
+    object Verification {
+        +verified : boolean
+    }
+
+    Behaviour <- - ValidationActivity
+    Behaviour <- - VerificationActivity
+    Operation <- - VerificationActivity
+
+    Trace ^- - Validation
+
+    Verify ^- - Verification
+}
+
+@enduml
+
+PlantUML version 1.2022.0(Tue Jan 11 18:16:42 EET 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>
