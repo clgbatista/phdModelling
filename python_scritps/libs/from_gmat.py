@@ -1,31 +1,52 @@
+# @clgbatista -- clgbatista@pm.me
+#
+# Jun 2022
+#
+# -----------------------------------------------------------------------------------------------------------------------------------
+#
+# Lib with methods to handle gmat files
+#
+# -----------------------------------------------------------------------------------------------------------------------------------
+#
+# v0.1 -- parse the contact text file generated on gmat
+#
+# -----------------------------------------------------------------------------------------------------------------------------------
+# 
+
+from email.utils import parsedate
+from importlib.metadata import files
+
 import re
 import pandas as pd
 
-def contact_to_csv(file_name):
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     file_path     path to the folder where you can find the .txt GMAT contact files
+# @returns
+#     df            pandas data frame with target, observer, start time, end time and durantion of each overpass with contact from the satellite
+#
+def contact_to_csv(file_path):
 
     df = pd.DataFrame()
 
-    # file_name = 'SCD1Contact.txt'
-    data_folder = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'+file_name
-
     count = 0
-    with open(data_folder) as fp:
+    with open(file_path) as fp:
         while True:
             count += 1
             line = fp.readline()
 
-            if not line:
+            if not line: # if reaches the end of the file
                 break
 
-            match = re.findall('Target',line)
+            match = re.findall('Target',line) # extracts the target satellite
             if match:
                 target = line[8:-1]
 
-            match = re.findall('Observer:',line)
+            match = re.findall('Observer:',line) # extracts the observer/gs on the overpass
             if match:
                 observer = line[10:-1]
 
-            match = re.findall('\d\d ',line)
+            match = re.findall('\d\d ',line) # extracts the start, end time and duration of the overpass
             if match:
                 start_time = line[0:24]
                 end_time = line[28:52]
@@ -35,6 +56,4 @@ def contact_to_csv(file_name):
 
     fp.close()
 
-    # df.to_csv('contact.csv',index=False)
-
-    return df
+    return df # returns the data frame

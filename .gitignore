@@ -12,6 +12,7 @@ python_scritps/*.csv
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
 # Jupyter Notebook
 .ipynb_checkpoints

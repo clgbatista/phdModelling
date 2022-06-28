@@ -7,11 +7,13 @@ print('Runnning contact_to_csv.py script\n')
 
 data = pd.DataFrame()
 
+file_path = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'
+
 try:
-    for file_name in listdir('data/'):
+    for file_name in listdir(file_path):
         
         if file_name.endswith('.txt'):
-            df = gmat.contact_to_csv(file_name)
+            df = gmat.contact_to_csv(file_path+file_name)
             # print(len(df))
             data = pd.concat([data,df],ignore_index=True)
 
