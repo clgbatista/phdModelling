@@ -1,3 +1,17 @@
 
 # ignoring the input files from gmat, .txt
 python_scritps/data/*.txt
+
+# ignoring csv generated files
+python_scritps/*.csv
+
+# backup files
+*.bak
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
