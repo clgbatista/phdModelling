@@ -9,7 +9,7 @@ python_scritps/*.csv
 *.bak
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+python_scritps/libs/__pycache__/
 *.py[cod]
 *$py.class
 *.pyc
