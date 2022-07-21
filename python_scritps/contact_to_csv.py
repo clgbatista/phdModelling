@@ -7,7 +7,13 @@ print('Runnning contact_to_csv.py script\n')
 
 data = pd.DataFrame()
 
-file_path = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'
+try:
+    file_path = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'
+    listdir(file_path)
+    print("Running on WIN")
+except:
+    file_path = '/media/clgbatista/data/repos/phdModelling/python_scritps/data/'
+    print("Running on Linux\n")
 
 try:
     for file_name in listdir(file_path):
