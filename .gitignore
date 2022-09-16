@@ -9,11 +9,10 @@ python_scritps/*.csv
 *.bak
 
 # Byte-compiled / optimized / DLL files
-python_scritps/libs/__pycache__/
+python_scritps/libs/__pycache__/*
 *.py[cod]
 *$py.class
 *.pyc
 
 # Jupyter Notebook
 .ipynb_checkpoints
-python_scritps/libs/__pycache__/from_gmat.cpython-310.pyc
