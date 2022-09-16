@@ -48,12 +48,18 @@ def contact_to_csv(file_path):
 
             match = re.findall('\d\d ',line) # extracts the start, end time and duration of the overpass
             if match:
-                start_time = pd.to_datetime(line[0:24])
-                end_time = pd.to_datetime(line[28:52])
+                start_time = pd(line[0:24])
+                end_time = pd(line[28:52])
                 duration = line[58:70]
-                data_cols = pd.DataFrame({'Target': [target],'Observer': [observer], 'Start Time (UTC)': [start_time], 'Stop Time (UTC)': [end_time], 'Duration (s)': [duration]})
+                day = start_time.split()[1]
+                data_cols = pd.DataFrame({'Target': [target],
+                                         'Observer': [observer],
+                                         'Start Time (UTC)': [start_time],
+                                         'Stop Time (UTC)': [end_time],
+                                         'Duration (s)': [duration],
+                                         'Day': [day]})
                 df = pd.concat([df,data_cols], ignore_index=True)
 
-    fp.close()
+    fp.close() # close the file
 
     return df # returns the data frame

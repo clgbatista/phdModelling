@@ -1,9 +1,12 @@
+#!/usr/bin/env python
+
 import pandas as pd
 from os import listdir
 
 import libs.from_gmat as gmat
 
-print('Runnning contact_to_csv.py script\n')
+print('=========================================================')
+print('         Runnning contact_to_csv.py script\n')
 
 data = pd.DataFrame()
 
@@ -11,13 +14,15 @@ try:
     file_path = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'
     listdir(file_path)
     print("Running on WIN")
+    print(file_path)
 except:
     file_path = '/media/clgbatista/data/repos/phdModelling/python_scritps/data/'
     print("Running on Linux\n")
+    print(file_path)
 
 try:
     for file_name in listdir(file_path):
-        
+
         if file_name.endswith('.txt'):
             df = gmat.contact_to_csv(file_path+file_name)
             # print(len(df))
