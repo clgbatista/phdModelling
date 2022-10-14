@@ -1,27 +1,27 @@
-city,lat,lon,country,iso2,admin,capital,pop,pop_proper
-Sao Paulo,-23.5504,-46.6339,Brazil,BR,Sao Paulo,admin,22046000,12252023
-Rio de Janeiro,-22.9083,-43.1964,Brazil,BR,Rio de Janeiro,admin,12272000,6520000
-Belo Horizonte,-19.9281,-43.9419,Brazil,BR,Minas Gerais,admin,5159000,2502557
-Salvador,-12.9708,-38.5108,Brazil,BR,Bahia,admin,2886698,2886698
-Fortaleza,-3.7275,-38.5275,Brazil,BR,Ceara,admin,2452185,2452185
-Curitiba,-25.4297,-49.2719,Brazil,BR,Parana,admin,1879355,1879355
-Manaus,-3.1,-60.0167,Brazil,BR,Amazonas,admin,1802014,1802014
-Recife,-8.0539,-34.8808,Brazil,BR,Pernambuco,admin,1555039,1555039
-Belem,-1.4558,-48.5039,Brazil,BR,Para,admin,1499641,1499641
-Porto Alegre,-30.0328,-51.23,Brazil,BR,Rio Grande do Sul,admin,1484941,1484941
-Goiania,-16.6806,-49.2564,Brazil,BR,Goias,admin,1393575,1393575
-Sao Luis,-2.53,-44.3028,Brazil,BR,Maranhao,admin,1073893,1073893
-Maceio,-9.6658,-35.735,Brazil,BR,Alagoas,admin,1029129,1029129
-Campo Grande,-20.4686,-54.6222,Brazil,BR,Mato Grosso do Sul,admin,906092,906092
-Natal,-5.795,-35.2089,Brazil,BR,Rio Grande do Norte,admin,877662,877662
-Teresina,-5.0949,-42.8042,Brazil,BR,Piaui,admin,868075,868075
-Jo�o Pessoa,-7.12,-34.88,Brazil,BR,Paraiba,admin,817511,817511
-Aracaju,-10.9111,-37.0717,Brazil,BR,Sergipe,admin,685356,490175
-Cuiaba,-15.5958,-56.0969,Brazil,BR,Mato Grosso,admin,618124,618124
-Florianopolis,-27.5933,-48.553,Brazil,BR,Santa Catarina,admin,477798,477798
-Macapa,0.033,-51.0653,Brazil,BR,Amapa,admin,474706,474706
-Porto Velho,-8.7619,-63.9039,Brazil,BR,Rondonia,admin,428527,428527
-Rio Branco,-9.9781,-67.8117,Brazil,BR,Acre,admin,413418,413418
-Vitoria,-20.3189,-40.3378,Brazil,BR,Espirito Santo,admin,355875,355875
-Boa Vista,2.82,-60.6719,Brazil,BR,Roraima,admin,326419,326419
-Palmas,-10.2128,-48.3603,Brazil,BR,Tocantins,admin,272726,272726
+city,lat,lon,country,iso2,admin,capital,pop,pop_proper,long,id
+Sao Paulo,-23.5504,-46.6339,Brazil,BR,Sao Paulo,admin,22046000,12252023,313.3661,SP
+Rio de Janeiro,-22.9083,-43.1964,Brazil,BR,Rio de Janeiro,admin,12272000,6520000,316.8036,RJ
+Belo Horizonte,-19.9281,-43.9419,Brazil,BR,Minas Gerais,admin,5159000,2502557,316.0581,MG
+Salvador,-12.9708,-38.5108,Brazil,BR,Bahia,admin,2886698,2886698,321.4892,BA
+Fortaleza,-3.7275,-38.5275,Brazil,BR,Ceara,admin,2452185,2452185,321.4725,CE
+Curitiba,-25.4297,-49.2719,Brazil,BR,Parana,admin,1879355,1879355,310.7281,PR
+Manaus,-3.1,-60.0167,Brazil,BR,Amazonas,admin,1802014,1802014,299.9833,AM
+Recife,-8.0539,-34.8808,Brazil,BR,Pernambuco,admin,1555039,1555039,325.1192,PE
+Belem,-1.4558,-48.5039,Brazil,BR,Para,admin,1499641,1499641,311.4961,PA
+Porto Alegre,-30.0328,-51.23,Brazil,BR,Rio Grande do Sul,admin,1484941,1484941,308.77,RS
+Goiania,-16.6806,-49.2564,Brazil,BR,Goias,admin,1393575,1393575,310.7436,GO
+Sao Luis,-2.53,-44.3028,Brazil,BR,Maranhao,admin,1073893,1073893,315.6972,MA
+Maceio,-9.6658,-35.735,Brazil,BR,Alagoas,admin,1029129,1029129,324.265,AL
+Campo Grande,-20.4686,-54.6222,Brazil,BR,Mato Grosso do Sul,admin,906092,906092,305.3778,MS
+Natal,-5.795,-35.2089,Brazil,BR,Rio Grande do Norte,admin,877662,877662,324.7911,RN
+Teresina,-5.0949,-42.8042,Brazil,BR,Piaui,admin,868075,868075,317.1958,PI
+Joao Pessoa,-7.12,-34.88,Brazil,BR,Paraiba,admin,817511,817511,325.12,PB
+Aracaju,-10.9111,-37.0717,Brazil,BR,Sergipe,admin,685356,490175,322.9283,SE
+Cuiaba,-15.5958,-56.0969,Brazil,BR,Mato Grosso,admin,618124,618124,303.9031,MT
+Florianopolis,-27.5933,-48.553,Brazil,BR,Santa Catarina,admin,477798,477798,311.447,SC
+Macapa,0.033,-51.0653,Brazil,BR,Amapa,admin,474706,474706,308.9347,AM
+Porto Velho,-8.7619,-63.9039,Brazil,BR,Rondonia,admin,428527,428527,296.0961,RO
+Rio Branco,-9.9781,-67.8117,Brazil,BR,Acre,admin,413418,413418,292.1883,AC
+Vitoria,-20.3189,-40.3378,Brazil,BR,Espirito Santo,admin,355875,355875,319.6622,ES
+Boa Vista,2.82,-60.6719,Brazil,BR,Roraima,admin,326419,326419,299.3281,PI
+Palmas,-10.2128,-48.3603,Brazil,BR,Tocantins,admin,272726,272726,311.6397,TO

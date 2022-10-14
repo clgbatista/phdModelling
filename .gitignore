@@ -21,5 +21,8 @@ python_scritps/libs/__pycache__/*
 *.ipynb_checkpoints
 *.ipynb
 
-# images
+# images and html
 *.png
+*.html
+
+python_scritps/notebooks/iframe_figures/
