@@ -2,7 +2,7 @@
 
 from ast import parse
 import pandas as pd
-from os import listdir
+import os as os
 import argparse
 
 import libs.from_gmat as gmat
@@ -25,13 +25,13 @@ parser.add_argument("-i",
 args = parser.parse_args()
 
 print('=========================================================')
-print('         Runnning contact_to_csv.py script\n')
+print('         Runnning '+os.path.basename(__file__)+' script\n')
 
 data = pd.DataFrame()
 
 try:
     file_path = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'
-    listdir(file_path)
+    os.listdir(file_path)
     print("Running on WIN")
     print(file_path)
 except:
@@ -41,7 +41,7 @@ except:
 
 try:
     if args.input :
-        data = gmat.contact_to_csv(args.input)
+        data = gmat.contact_to_csv(file_path+args.input)
         # data = pd.concat([data,df],ignore_index=True)
 
         print('File {} appended'.format(args.input))
@@ -51,7 +51,7 @@ try:
     
     else:
 
-        for file_name in listdir(file_path):
+        for file_name in os.listdir(file_path):
 
             if file_name.endswith('.txt') :
                 df = gmat.contact_to_csv(file_path+file_name)

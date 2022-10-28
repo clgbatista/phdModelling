@@ -2,7 +2,7 @@
 
 from ast import parse
 import pandas as pd
-from os import listdir
+import os as os
 import argparse
 
 import warnings
@@ -28,10 +28,16 @@ parser.add_argument("-i",
 args = parser.parse_args()
 
 print('=========================================================')
-print('         Runnning gen_contac_table.py script\n')
+print('         Runnning '+os.path.basename(__file__)+' script\n')
+
+geojson_file = 'libs/geojson/brazil-states.geojson'
+coverage_file = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/libs/geojson/capitals.csv'
 
 if args.input :
-    data = gmat.gen_contact_table(args.input)
+    data = gmat.gen_contact_table(
+        contact_path=args.input,   
+        geojson_path=geojson_file,
+        coverage_path=coverage_file)
     file_to_save = args.output+'.csv'
     err = data.to_csv(file_to_save,index=False)
 

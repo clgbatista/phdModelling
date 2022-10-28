@@ -66,9 +66,15 @@ def contact_to_csv(file_path):
 
     return df # returns the data frame
 
-def gen_contact_table(file_path):
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     file_path     path to the folder where you can find the .txt GMAT contact files
+# @returns
+#     df            pandas data frame with target, observer, start time, end time and durantion of each overpass with contact from the satellite
+#
+def gen_contact_table(contact_path, geojson_path, coverage_path):
 
-    data = pd.read_csv(file_path,
+    data = pd.read_csv(contact_path,
                     parse_dates=[2,3],
                     infer_datetime_format=True)
 
@@ -95,16 +101,38 @@ def gen_contact_table(file_path):
 
     data["coverage"] = round(data["Duration (s)"]/(1*24*60*60),10)
 
-    return(data)
+    # f = open('libs/geojson/brazil-states.geojson')
+    # f = open(geojson_path)
+    # brazil = json.load(f)
 
-def gen_converage_table():
+    # state_id_map = {}
+    # for feature in brazil ['features']:
+    #     feature['id'] = feature['properties']['name']
+    #     state_id_map[feature['properties']['sigla']] = feature['id']
 
-    f = open('../libs/geojson/brazil-states.geojson')
-    brazil = json.load(f)
+    print(geojson_path)
 
-    state_id_map = {}
-    for feature in brazil ['features']:
-    feature['id'] = feature['properties']['name']
-    state_id_map[feature['properties']['sigla']] = feature['id']
+    # coverage = pd.read_csv('C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/libs/geojson/capitals.csv')
+    coverage = pd.read_csv(coverage_path)
 
-    return 0
+    coverage['value'] = 0
+
+    for id in data['Observer'].unique() :
+        aux = data.query('Observer == @id ')
+        aux.reset_index(inplace=True)
+
+        for dia in data['day'].unique() :
+            aux2 = aux.query('day == @dia')
+            aux2.reset_index(inplace=True)
+            
+            cov_value = aux2.coverage.sum()/len(data['day'].unique())
+            coverage["value"].where(coverage['id'] != id, cov_value, inplace=True)
+
+    return(coverage)
+
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     file_path     path to the folder where you can find the .txt GMAT contact files
+# @returns
+#     df            pandas data frame with target, observer, start time, end time and durantion of each overpass with contact from the satellite
+#
