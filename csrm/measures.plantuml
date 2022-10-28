@@ -1,0 +1,76 @@
+@startuml measures
+
+skinparam Linetype polyline
+
+frame "FCS Tech Measures" as measures {
+
+    frame "FCS" {
+            object Stakeholders {
+            +id
+        }
+        object MISSION {
+            +objective
+            +goals
+            +needs
+        }
+
+        Stakeholders -o MeasuresOfEffectiveness : defines
+        MISSION -o KeyPerformanceParameters : analises
+
+        object MeasuresOfEffectiveness {
+            +summary
+            +id
+        }
+
+        object DataAvailability
+        object RevisitTime
+
+        MeasuresOfEffectiveness ^-- DataAvailability
+        MeasuresOfEffectiveness ^-- RevisitTime
+        MeasuresOfEffectiveness o- MeasuresOfPerformance : satisfies
+
+        object KeyPerformanceParameters {
+            +summary
+            +id
+        }
+
+        object Coverage
+        object DataStorage
+        object DownlinkCapability
+
+        KeyPerformanceParameters ^-- Coverage
+        KeyPerformanceParameters ^-- DataStorage
+        KeyPerformanceParameters ^-- DownlinkCapability
+        KeyPerformanceParameters ^-- DataAvailability
+        KeyPerformanceParameters ^-- RevisitTime
+
+        object MeasuresOfPerformance {
+            +summary
+            +id
+    }
+    }
+
+    frame "Constituent System" as cs {
+            object TechnicalPerformanceMeasures {
+            +summary
+            +id
+        }
+
+        object dataRate
+        object dataStorage
+        object engagementTime
+        object accessTime
+        object coverage
+
+        TechnicalPerformanceMeasures ^-- dataRate
+        TechnicalPerformanceMeasures ^-- dataStorage
+        TechnicalPerformanceMeasures ^-- accessTime
+        TechnicalPerformanceMeasures ^-- engagementTime 
+        TechnicalPerformanceMeasures ^-- coverage 
+
+    }
+
+    MeasuresOfPerformance o-- cs : confirms
+}
+
+@enduml

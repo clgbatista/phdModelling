@@ -1,0 +1,275 @@
+@startuml requirementsProfile
+
+skinparam Linetype ortho
+
+frame "FCS Concerns and Requirements" {
+
+    frame "Mission Level" as mission {
+        
+        frame "Needs" as NEED {
+            object MissionNeeds {
+                + description : string
+            }
+            object SPACE {
+                "A number of spacecrafts that enables the objectives"
+            }
+            object GROUND {
+                "Ground Stations that enable the reception\nof the environmental data"
+            }
+            object DCP {
+                "A number of DCPs, spread around the globe, that\nenables the environmental data collection"
+            }
+            object MC {
+                "A mission center that centralizes the plannning\nand execution of the mission and distribute\nthe collected data"
+            }
+            MissionNeeds ^-- SPACE
+            MissionNeeds ^-- GROUND
+            MissionNeeds ^-- MC
+            MissionNeeds ^-- DCP
+        }
+
+        frame "Objectives" as OBJ {
+
+            object MissionObjectives {
+                + description : string
+            }
+            object Main {
+                "Distribute environmental data collected\nfrom DCPs spread all over the globe"
+            }
+            object SecondarySPC {
+                "Upload environmental data from DCPs and\ndownload them to the Ground Stations"
+            }
+            object SecondaryGS {
+                "Receive the data from the SPC and\nsend them to the Mission Center"
+            }
+            object SecondaryDCP {
+                "Collect environmental data through its\nsensors and upload them to the SPC"
+            }
+            object SecondaryMC {
+                "Rceive the data from the GS, validate them\nand distribute to the end-users"
+            }
+            MissionObjectives ^-- Main
+            Main ^-- SecondaryDCP
+            Main ^-- SecondaryGS
+            Main ^-- SecondaryMC
+            Main ^-- SecondarySPC
+        }
+
+        frame "Constraints" as CONST {
+            
+            object MissionConstraints {
+                + description : string
+            }
+            object MissionCenter {
+                + centralized
+            }
+            object HostedPayload {
+                + EDC
+            }
+            object Retrofitting {
+                + add satellite
+                + retire satellite
+            }
+            object Coverage {
+                + % of DCP
+            }
+            object QualityOfService {
+                + revisitTime
+                + dataAvailabilty
+            }
+            MissionConstraints ^-- Coverage
+            MissionConstraints ^-- MissionCenter
+            MissionConstraints ^-- HostedPayload
+            MissionConstraints ^-- Retrofitting
+            MissionConstraints ^-- QualityOfService
+        }
+
+        frame "Requirements" as REQ {
+
+            object MissionRequirements {
+                + description : string
+                + risk : uint
+                + id : uint.uint
+            }
+            object reqDataAvailability
+                object processing {
+                    + onboard
+                    + ground
+                }
+                object availability {
+                    + time
+                }
+                object missionCenter {
+                    + centralized
+                }
+                reqDataAvailability ^-- processing
+                reqDataAvailability ^-- availability
+                reqDataAvailability ^-- missionCenter
+
+            object reqCommunication
+                object channels {
+                    + uplink
+                    + downlink
+                }
+                object dataRate {
+                    + uplink
+                    + downlink
+                }
+                object accessTime {
+                    + time min
+                }
+                reqCommunication ^-- channels
+                reqCommunication ^-- dataRate
+                reqCommunication ^-- accessTime
+
+            object reqTasksControlScheduling
+                object payloadControl {
+                    + all GS
+                }
+                object planning {
+                    + central decision
+                }
+                reqTasksControlScheduling ^-- payloadControl
+                reqTasksControlScheduling ^-- planning
+
+            object reqTimeline
+                object revisitTime {
+                    + time min
+                }
+                object retrofitting {
+                    + add satellite
+                    + retire satellite
+                }
+                reqTimeline ^-- revisitTime
+                reqTimeline ^-- retrofitting
+
+            object reqFaultManagement
+                object reconfiguration {
+                    + time
+                    + maintain QoS
+                }
+                object constituentSystem {
+                    + resources
+                }
+                reqFaultManagement ^-- reconfiguration
+                reqFaultManagement ^-- constituentSystem
+
+            MissionRequirements ^-- reqCommunication
+            MissionRequirements ^-- reqDataAvailability
+            MissionRequirements ^-- reqTasksControlScheduling
+            MissionRequirements ^-- reqTimeline
+            MissionRequirements ^-- reqFaultManagement
+        }
+
+        frame "Stakeholder Constraints" as STKCONST {
+
+            object StakeholderConcerns {
+                + description : string
+            }
+            object RevisitTime {
+                + time min
+            } 
+            object DataAccess {
+                + time min
+            }
+            StakeholderConcerns ^-- RevisitTime
+            StakeholderConcerns ^-- DataAccess
+        }
+    }
+
+    frame "Segment Level"  as segment {
+        object Requirements {
+            + description : string
+            + risk : uint
+            + priority : uint
+        }
+
+        object SpaceSegmentRequirements
+            object Commands {
+                + receive
+            }
+            object Telemetries {
+                + send
+            }
+            object SPCEngagement {
+                + % of orbital time
+            }
+            object Payload {
+                + EDC
+                + Transponder DCS
+                + ROI
+            }
+                object DataStorage {
+                    + internal bytes
+                }
+                object DataProcessing {
+                    + onboard
+                    + ground
+                }
+                Payload ^-- DataStorage
+                Payload ^-- DataProcessing
+            object Communication {
+                + channels
+                + dataRate
+                + groundStation id
+            }
+            SpaceSegmentRequirements ^-- Payload
+            SpaceSegmentRequirements ^-- Communication
+            SpaceSegmentRequirements ^-- Commands
+            SpaceSegmentRequirements ^-- Telemetries
+            SpaceSegmentRequirements ^-- SPCEngagement
+
+        object GroundSegmentRequirements
+            object Control {
+                + tracking
+                + commands
+                + telemetries 
+                + operation
+            }
+            object GSEngagement {
+                + % time
+            }
+            object Spacecrafts {
+                + number
+                + satellite id
+            }
+            GroundSegmentRequirements ^-- Communication
+            GroundSegmentRequirements ^-- Control
+            GroundSegmentRequirements ^-- GSEngagement
+            GroundSegmentRequirements ^-- Spacecrafts
+
+        object UserSegmentRequirements
+            object DCPLocation {
+                + lat
+                + lon
+                + elevation
+            }
+            object DCPDataStorage {
+                + internal bytes
+            }
+            object DCPAccesTime {
+                + time min
+            }
+            object DCPSensors {
+                + data generated
+                + sensor id
+                + function
+            }
+            object DCPRevisitTime {
+                + time min
+            }
+
+            UserSegmentRequirements ^-- DCPLocation
+            UserSegmentRequirements ^-- DCPDataStorage
+            UserSegmentRequirements ^-- DCPAccesTime
+            UserSegmentRequirements ^-- DCPSensors
+            UserSegmentRequirements ^-- DCPRevisitTime
+
+        Requirements ^-- SpaceSegmentRequirements
+        Requirements ^-- UserSegmentRequirements
+        Requirements ^-- GroundSegmentRequirements
+
+    }
+}
+
+@enduml

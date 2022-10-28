@@ -1,0 +1,27 @@
+
+# ignoring the input files from gmat, .txt
+*.txt
+
+# ignoring csv generated files
+python_scritps/*.csv
+*.csv
+
+# backup files
+*.bak
+*.bkp
+
+# Byte-compiled / optimized / DLL files
+python_scritps/libs/__pycache__/*
+*.py[cod]
+*.class
+*.pyc
+
+# Jupyter Notebook
+*.ipynb_checkpoints
+*.ipynb
+
+# images and html
+*.png
+*.html
+
+python_scritps/notebooks/iframe_figures/
