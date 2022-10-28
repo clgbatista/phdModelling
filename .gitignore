@@ -3,25 +3,22 @@
 *.txt
 
 # ignoring csv generated files
-python_scritps/*.csv
-*.csv
+.csv
 
 # backup files
-*.bak
-*.bkp
+.bak
+.bkp
 
 # Byte-compiled / optimized / DLL files
-python_scritps/libs/__pycache__/*
-*.py[cod]
-*.class
-*.pyc
+python_scritps/libs/__pycache__/
+python_scritps/notebooks/iframe_figures/
+.py[cod]
+.class
+.pyc
 
 # Jupyter Notebook
-*.ipynb_checkpoints
-*.ipynb
+.ipynb_checkpoints
 
 # images and html
-*.png
-*.html
-
-python_scritps/notebooks/iframe_figures/
+.png
+.html
