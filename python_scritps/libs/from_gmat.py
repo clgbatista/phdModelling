@@ -101,15 +101,6 @@ def gen_contact_table(contact_path, geojson_path, coverage_path):
 
     data["coverage"] = round(data["Duration (s)"]/(1*24*60*60),10)
 
-    # f = open('libs/geojson/brazil-states.geojson')
-    # f = open(geojson_path)
-    # brazil = json.load(f)
-
-    # state_id_map = {}
-    # for feature in brazil ['features']:
-    #     feature['id'] = feature['properties']['name']
-    #     state_id_map[feature['properties']['sigla']] = feature['id']
-
     print(geojson_path)
 
     # coverage = pd.read_csv('C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/libs/geojson/capitals.csv')
@@ -125,7 +116,7 @@ def gen_contact_table(contact_path, geojson_path, coverage_path):
             aux2 = aux.query('day == @dia')
             aux2.reset_index(inplace=True)
             
-            cov_value = aux2.coverage.sum()/len(data['day'].unique())
+            cov_value = aux2.coverage.sum()/len(data['day'].unique())*100
             coverage["value"].where(coverage['id'] != id, cov_value, inplace=True)
 
     return(coverage)

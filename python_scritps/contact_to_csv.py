@@ -24,10 +24,12 @@ parser.add_argument("-i",
 
 args = parser.parse_args()
 
+script_name = os.path.basename(__file__)
 print('=========================================================')
-print('         Runnning '+os.path.basename(__file__)+' script\n')
+print('         Runnning <'+script_name+'> script\n')
 
 data = pd.DataFrame()
+output_dir = 'output/contact/'
 
 try:
     file_path = 'C:/Users/carlos.batista/Documents/.coding/plantuml/phdModelling/python_scritps/data/'
@@ -47,7 +49,7 @@ try:
         print('File {} appended'.format(args.input))
 
         file_to_save = args.output+'.csv'
-        err = data.to_csv(file_to_save,index=False)
+        err = data.to_csv(output_dir+file_to_save,index=False)
     
     else:
 
@@ -60,12 +62,12 @@ try:
                 print('File {} appended'.format(file_name))
 
                 file_to_save = args.output+'.csv'
-                err = data.to_csv(file_to_save,index=False)
+                err = data.to_csv(output_dir+file_to_save,index=False)
             else:
                 break
 
     if not err:
-        print('\nSaved to file {}'.format(file_to_save))
+        print('\nSaved to file {}'.format(output_dir+file_to_save))
     else:
         print('\nUnable to save file')
 
