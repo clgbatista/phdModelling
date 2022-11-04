@@ -905,4 +905,4 @@ GMAT DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
 %----------------------------------------
 
 BeginMissionSequence;
-Propagate 'oneDayPropagator' EarthPointProp(SCD1, SCD2, CBERS4A, CONASAT1, CONASAT2, CONASAT3) {CBERS4A.ElapsedDays = 7};
+Propagate 'oneDayPropagator' EarthPointProp(SCD1, SCD2, CBERS4A, CONASAT1, CONASAT2, CONASAT3) {CBERS4A.ElapsedDays = 1};
