@@ -82,7 +82,7 @@ echo:
 
 @REM ----------------------------------------------------------
 @REM Convert Contact text file(s) to csv
-py contact_to_csv.py -i SCD/SCD1Contact.txt -o contactSCD1
+py contact_to_csv.py -i scd/SCD1Contact.txt -o contactSCD1
 
 @REM ----------------------------------------------------------
 @REM Create Coverage csv file(s)
@@ -93,7 +93,7 @@ echo:
 
 @REM ----------------------------------------------------------
 @REM Convert Contact text file(s) to csv
-py contact_to_csv.py -i SCD/SCD2Contact.txt -o contactSCD2
+py contact_to_csv.py -i scd/SCD2Contact.txt -o contactSCD2
 
 @REM ----------------------------------------------------------
 @REM Create Coverage csv file(s)
@@ -104,7 +104,7 @@ echo:
 
 @REM ----------------------------------------------------------
 @REM Convert Contact text file(s) to csv
-py contact_to_csv.py -i CBERS/CBERSContact.txt -o contactCBERS
+py contact_to_csv.py -i cbers/CBERSContact.txt -o contactCBERS
 
 @REM ----------------------------------------------------------
 @REM Create Coverage csv file(s)
