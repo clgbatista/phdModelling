@@ -1,6 +1,6 @@
 @startuml architecturalprofile
 
-' skinparam Linetype ortho
+skinparam Linetype ortho
 
 frame "FCS Achitecture Structure" {
 
@@ -14,6 +14,8 @@ frame "FCS Achitecture Structure" {
     }
     object STAKEHOLDER {
         +id
+        +concerns
+        +needs
     }
     object MISSION {
         +objective
@@ -26,11 +28,12 @@ frame "FCS Achitecture Structure" {
     FederatedCubeSatSystem ^-- MISSION
 
     object SPACESEGMENT {
-        +orbit
-        +#satellites
-        +ROI
-        +payload
-        +engagement
+        +orbit: [string]
+        +#satellites: [int]
+        +ROI: [string]
+        +payload: [string]
+        +engagement: [float]
+        +groundStations: [string]
     }
     object GROUNDSEGMENT {
         +location
@@ -50,6 +53,7 @@ frame "FCS Achitecture Structure" {
         +ROI: Brazil
         +payload: Transponder DCS
         +engagement: 100%
+        +groundStations: [ETA,ETC]
     }
     object CBERS {
         +orbit: polar
@@ -57,6 +61,7 @@ frame "FCS Achitecture Structure" {
         +ROI: Brazil
         +payload: Transponder DCS
         +engagement: 50%
+        +groundStations: [ETA,ETC]
     }
     object CONASAT {
         +orbit: TBD
@@ -64,19 +69,20 @@ frame "FCS Achitecture Structure" {
         +ROI: Brazil
         +payload: EDC
         +engagement: 100%
+        +groundStations: [EMMN,ETC]
     }
-    object CATARINA {
-        +orbit: TBD
-        +#satellites: 0
-        +ROI: TBD
-        +payload: EDC
-        +engagement: TBD
-    }
+    ' object CATARINA {
+    '     +orbit: TBD
+    '     +#satellites: 0
+    '     +ROI: TBD
+    '     +payload: EDC
+    '     +engagement: TBD
+    ' }
 
     SPACESEGMENT ^-- SCD
     SPACESEGMENT ^-- CBERS
     SPACESEGMENT ^-- CONASAT
-    SPACESEGMENT ^-- CATARINA
+    ' SPACESEGMENT ^-- CATARINA
 
     object GROUNDSTATION {
         +Id: string
@@ -84,6 +90,7 @@ frame "FCS Achitecture Structure" {
         +location: [float,float]
         +frequency: [string]
         +dataRate: [float]
+        +satellites: [string]
     }
     object MISSIONCONTROL {
         +Id: string
@@ -145,21 +152,24 @@ frame "FCS Achitecture Structure" {
         +MinimumElevationAngle: 7
         +location: [-5.83,324.79]
         +frequency: [VHF,UHF,S-band]  
-        +datarate: TBD
+        +datarate: TBC
+        +satellites: [CONASAT]
     }
     object ETC {
         +Id: ETC
         +MinimumElevationAngle: 7
         +location: [-15.5,303.99]
         +frequency: [S-band]
-        +datarate: TBD
+        +datarate: TBC
+        +satellites: [CBERS,SCD]
     }
     object ETA {
         +Id: ETA
         +MinimumElevationAngle: 7
         +location: [-2.33,315.96]
         +frequency: S-band
-        +datarate: TBD
+        +datarate: TBC
+        +satellites: [CBERS,SCD]
     }
 
     GROUNDSTATION ^-- EMMN
