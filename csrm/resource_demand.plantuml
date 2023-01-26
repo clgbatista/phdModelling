@@ -1,0 +1,31 @@
+@startuml modelprofile
+
+package mission(m,T) as ms {
+
+    collections "demand (1,m,T)" as dm1
+    collections "demand (d,m,T)" as dmd
+
+    dm1 .. dmd
+
+}
+
+storage satisfaction
+
+state join_state <<join>>
+
+package resources(r,T) as rs {
+
+    collections "service (1,r,T)" as sr1
+    collections "service (s,r,T)" as srs
+
+    sr1 .. srs
+
+    portout p1
+    portout p2
+
+}
+
+sr1 --> join_state
+srs --> join_state
+
+@enduml
