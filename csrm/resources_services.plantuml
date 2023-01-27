@@ -144,7 +144,7 @@ package resource(user,T){
             "ROI":"Brazil",
             "number of DCP":"TBC",
             "owner":"TBC",
-            "DCP1 to N":["lat","lon"]
+            "DCP1 to N":["lat","lon","elevation"]
         }
     }
     package service(meteo,user,T){
@@ -152,7 +152,7 @@ package resource(user,T){
             "ROI":"Brazil",
             "number of DCP":"TBC",
             "owner":"TBC",
-            "DCP1 to N":["lat","lon"]
+            "DCP1 to N":["lat","lon","elevation"]
         }
     }
     package service(geo,user,T){
@@ -160,7 +160,7 @@ package resource(user,T){
             "ROI":"Brazil",
             "number of DCP":"TBC",
             "owner":"TBC",
-            "DCP1 to N":["lat","lon"]
+            "DCP1 to N":["lat","lon","elevation"]
         }
     }
 }
