@@ -24,3 +24,6 @@ python_scritps/notebooks/iframe_figures/
 *.svg
 *.pdf
 *.html
+
+# Java Executables
+*.jar
