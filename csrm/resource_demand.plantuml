@@ -1,31 +1,34 @@
 @startuml modelprofile
+allowmixing
 
-package mission(m,T) as ms {
+package mission(golds,T) as ms {
 
-    collections "demand (1,m,T)" as dm1
-    collections "demand (d,m,T)" as dmd
-
-    dm1 .. dmd
+    package demand(coverage,golds,T) {
+        json coverageKPP {
+            "ROI":["lat","lon","elevation"],
+            "coverage":">70 %"
+        }
+    }
+    package demand(revisitTime,golds,T) {
+        json revisitKPP {
+            "ROI":["lat","lon","elevation"],
+            "revisitTIme":"< 1 hour"
+        }
+    }
+    package demand(dataStorage,golds,T) {
+        json storageKPP {
+            "numberDCP":27,
+            "dataPerDCP":"400 bps",
+            "dataGenerated":"~ 889.89 MB/day"
+        }
+    }
+    package demand(dataDownload,golds,T) {
+        json downloadKPP {
+            "storedData":"~ 1 GB/day",
+            "FER":"10E-15"
+        }
+    }
 
 }
-
-storage satisfaction
-
-state join_state <<join>>
-
-package resources(r,T) as rs {
-
-    collections "service (1,r,T)" as sr1
-    collections "service (s,r,T)" as srs
-
-    sr1 .. srs
-
-    portout p1
-    portout p2
-
-}
-
-sr1 --> join_state
-srs --> join_state
 
 @enduml

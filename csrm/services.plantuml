@@ -1,0 +1,168 @@
+@startuml resources
+allowmixing
+
+''''''''''''''''' SPACE SEGMENT '''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''
+package resource(space,T){
+    package service(scd,space,T){
+        json scdTPM {
+            "number of satellites":2,
+            "ground station":["ETA","ETC"],
+            "target ROI":"Brazil",
+            "satellites":{
+                "SCD-1":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "2.1 GHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                },
+                "SCD-2":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "2.1 GHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                }
+            } 
+        }
+    }
+    package service(cbers,space,T){
+        json cbersTPM {
+            "number of satellites":1,
+            "ground station":["ETA","ETC"],
+            "target ROI":"Brazil",
+            "satellites":{
+                "CBERS-4A":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "2.1 GHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                }
+            } 
+        }
+
+    }
+
+    package service(conasat,space,T){
+        json conasatTPM {
+            "number of satellites":6,
+            "ground station":["ETC","EMMN"],
+            "target ROI":"Brazil",
+            "satellites":{
+                "CONASAT-1":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "403 MHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                },
+                ' "CONASAT-2":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                ' "CONASAT-3":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                ' "CONASAT-4":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                ' "CONASAT-5":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                "CONASAT-6":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "403 MHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                }
+            } 
+        }
+    }
+}
+
+''''''''''''''''' GROUND SEGMENT ''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''
+package resource(ground,T){
+    package service(emmn,ground,T) {
+        json emmnTPM {
+            "location":["lat","lon","elevation"],
+            "satellites":["CONASAT"],
+            "antennas":["UHF","VHF"],
+            "dataRate": ["1200 bps","2400 bps","4800 bps","9600 bps"],
+            "automatic": true,
+            "mission control": true,
+            "mission database": true
+        }
+    }
+    package service(eta,ground,T) {
+        json etaTPM {
+            "location":["lat","lon","elevation"],
+            "satellites":["CBERS","SCD"],
+            "antennas":["UHF","S-Band"],
+            "dataRate": ["1200 bps","2400 bps","4800 bps","9600 bps"],
+            "automatic": false,
+            "mission control": false,
+            "mission database": false
+        }
+    }
+    package service(etc,ground,T){
+        json etcTPM {
+            "location":["lat","lon","elevation"],
+            "satellites":["CONASAT","CBERS","SCD"],
+            "antennas":["UHF","S-Band","X-Band"],
+            "dataRate": ["1200 bps","2400 bps","4800 bps","9600 bps"],
+            "automatic": false,
+            "mission control": true,
+            "mission database": false
+        }
+    }
+}
+
+''''''''''''''''' USER SEGMENT ''''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''
+package resource(user,T){
+    package service(hidro,user,T){
+        json hidroTPM {
+            "ROI":"Brazil",
+            "number of DCP":"TBC",
+            "owner":"TBC",
+            "DCP1 to N":["lat","lon"]
+        }
+    }
+    package service(meteo,user,T){
+        json meteoTPM {
+            "ROI":"Brazil",
+            "number of DCP":"TBC",
+            "owner":"TBC",
+            "DCP1 to N":["lat","lon"]
+        }
+    }
+    package service(geo,user,T){
+        json geoTPM {
+            "ROI":"Brazil",
+            "number of DCP":"TBC",
+            "owner":"TBC",
+            "DCP1 to N":["lat","lon"]
+        }
+    }
+}
+
+@enduml
