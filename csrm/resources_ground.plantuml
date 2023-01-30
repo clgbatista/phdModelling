@@ -1,0 +1,43 @@
+@startuml resourcesGround
+allowmixing
+
+''''''''''''''''' GROUND SEGMENT ''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''
+package resource(ground,T){
+    package service(emmn,ground,T) {
+        json emmnTPM {
+            "location":["lat","lon","elevation"],
+            "satellites":["CONASAT"],
+            "antennas":["UHF","VHF"],
+            "dataRate": ["1200 bps","2400 bps","4800 bps","9600 bps"],
+            "automatic": true,
+            "mission control": true,
+            "mission database": true
+        }
+    }
+    package service(eta,ground,T) {
+        json etaTPM {
+            "location":["lat","lon","elevation"],
+            "satellites":["CBERS","SCD"],
+            "antennas":["UHF","S-Band"],
+            "dataRate": ["1200 bps","2400 bps","4800 bps","9600 bps"],
+            "automatic": false,
+            "mission control": false,
+            "mission database": false
+        }
+    }
+    package service(etc,ground,T){
+        json etcTPM {
+            "location":["lat","lon","elevation"],
+            "satellites":["CONASAT","CBERS","SCD"],
+            "antennas":["UHF","S-Band","X-Band"],
+            "dataRate": ["1200 bps","2400 bps","4800 bps","9600 bps"],
+            "automatic": false,
+            "mission control": true,
+            "mission database": false
+        }
+    }
+}
+
+
+@enduml

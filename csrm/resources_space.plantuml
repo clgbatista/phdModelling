@@ -1,0 +1,103 @@
+@startuml resourcesSpace
+allowmixing
+
+''''''''''''''''' SPACE SEGMENT '''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''
+package resource(space,T){
+    package service(scd,space,T){
+        json scdTPM {
+            "number of satellites":2,
+            "ground station":["ETA","ETC"],
+            "target ROI":"Brazil",
+            "satellites":{
+                "SCD-1":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "2.1 GHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                },
+                "SCD-2":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "2.1 GHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                }
+            } 
+        }
+    }
+    package service(cbers,space,T){
+        json cbersTPM {
+            "number of satellites":1,
+            "ground station":["ETA","ETC"],
+            "target ROI":"Brazil",
+            "satellites":{
+                "CBERS-4A":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "2.1 GHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                }
+            } 
+        }
+
+    }
+
+    package service(conasat,space,T){
+        json conasatTPM {
+            "number of satellites":6,
+            "ground station":["ETC","EMMN"],
+            "target ROI":"Brazil",
+            "satellites":{
+                "CONASAT-1":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "403 MHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                },
+                ' "CONASAT-2":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                ' "CONASAT-3":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                ' "CONASAT-4":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                ' "CONASAT-5":{
+                '     "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                '     "uplink frequency":"401 MHz",
+                '     "downlink frequency": "403 MHz",
+                '     "ROI contacts per day": 20,
+                '     "GS contacts per day": 4
+                ' },
+                "CONASAT-6":{
+                    "kepplerian elements":["sma","ecc","raan","inc","aop"],
+                    "uplink frequency":"401 MHz",
+                    "downlink frequency": "403 MHz",
+                    "ROI contacts per day": 20,
+                    "GS contacts per day": 4
+                }
+            } 
+        }
+    }
+}
+
+
+
+@enduml

@@ -1,0 +1,79 @@
+@startuml architectural_general
+
+skinparam Linetype ortho
+
+frame "FCS Achitecture Structure" {
+
+    object FederatedCubeSatSystem {
+        +performanceRequirements
+        +measurementSpecification
+    }
+
+    object SEGMENTS {
+        +owner
+    }
+    object STAKEHOLDER {
+        +id
+        +concerns
+        +needs
+    }
+    object MISSION {
+        +objective
+        +goals
+        +needs
+    }
+
+    FederatedCubeSatSystem ^-- SEGMENTS
+    FederatedCubeSatSystem ^-- STAKEHOLDER
+    FederatedCubeSatSystem ^-- MISSION
+
+    object SPACESEGMENT {
+        +owner
+        +id
+    }
+    object GROUNDSEGMENT {
+        +owner
+        +location
+    }
+    object USERSEGMENT {
+        +owner
+        +location
+    }
+
+    SEGMENTS ^-- SPACESEGMENT
+    SEGMENTS ^-- GROUNDSEGMENT
+    SEGMENTS ^-- USERSEGMENT
+    
+    frame "Constituent Systems" as cs {
+        object SATELLITE {
+            +keplerElem: float[5]
+            +#satellites: [int]
+            +ROI: [string]
+            +payload: [string]
+            +engagement: [float]
+            +groundStations: [string]
+        }
+
+        SPACESEGMENT ^-- SATELLITE
+
+        object GROUNDSTATION {
+            +id: [string]
+            +MinimumElevationAngle: [float]
+            +location: [float,float]
+            +frequency: [string]
+            +dataRate: [float]
+            +satellites: [string]
+        }
+        object MISSIONCONTROL {
+            +id: [string]
+            +location: [float,float]
+            +groundStation: Id [string]
+        }
+        
+        GROUNDSEGMENT ^-- MISSIONCONTROL
+        GROUNDSEGMENT ^-- GROUNDSTATION
+    }
+
+}
+
+@enduml
