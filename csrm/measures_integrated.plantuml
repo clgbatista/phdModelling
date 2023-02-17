@@ -1,0 +1,42 @@
+@startuml measures
+
+skinparam linetype ortho
+
+frame "FCS Tech Measures" as measures {
+    
+        object MeasuresOfEffectiveness {
+            + needs 
+            + goals 
+            + objectives
+        }
+
+        object KeyPerformanceParameters {
+            "what do you need"
+        }
+
+        object MeasuresOfPerformance {
+            "what do you have available"
+        }
+
+    frame "Constituent Systems" as cs {
+
+        object TechnicalPerformanceMeasures {
+            "what do you have"
+        }
+
+        frame "Resources" as rsc {
+            object services
+        }
+    }
+}
+
+left to right direction
+services "1" .l.o "1..*" TechnicalPerformanceMeasures
+rsc .r.> MeasuresOfPerformance
+
+top to bottom direction
+TechnicalPerformanceMeasures "*" -d-o "1..*" MeasuresOfPerformance
+MeasuresOfPerformance -d-^ KeyPerformanceParameters
+KeyPerformanceParameters -d-^ MeasuresOfEffectiveness
+
+@enduml

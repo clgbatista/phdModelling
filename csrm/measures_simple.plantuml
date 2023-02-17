@@ -1,0 +1,32 @@
+@startuml measures
+
+skinparam Linetype polyline
+' !theme spacelab
+
+frame "FCS Tech Measures" as measures {
+    
+        object MeasuresOfEffectiveness {
+            + needs 
+            + goals 
+            + objectives
+        }
+
+        object KeyPerformanceParameters {
+            "what do you need"
+        }
+
+        object MeasuresOfPerformance {
+            "what is available"
+        }
+    frame "Constituent System" as cs {
+        object TechnicalPerformanceMeasures {
+            "what do you have"
+        }
+    }
+}
+
+TechnicalPerformanceMeasures --> MeasuresOfPerformance : <sumarize>
+MeasuresOfPerformance --> KeyPerformanceParameters : <fulfill>
+KeyPerformanceParameters --> MeasuresOfEffectiveness : <achieves>
+
+@enduml

@@ -1,6 +1,19 @@
 @startuml architecturalprofile
 
 skinparam Linetype ortho
+' !theme blueprint
+' !theme amiga
+' !theme crt-green
+' !theme mars
+' !theme plain
+' !theme reddress-darkred
+' !theme reddress-lightblue
+' !theme sandstone
+' !theme sketchy
+' !theme sketchy-outline
+' !theme spacelab-white
+!theme vibrant
+
 
 frame "FCS Achitecture Structure" {
 
