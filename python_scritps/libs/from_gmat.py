@@ -129,3 +129,14 @@ def gen_contact_table(contact_path, geojson_path, coverage_path):
 # @returns
 #     df            pandas data frame with target, observer, start time, end time and durantion of each overpass with contact from the satellite
 #
+
+def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],elapsedDays=2,propagator='EarthPointProp'):
+    f = open("mission_sequence.txt", "w")
+    tg = ''
+    for i in range(len(targets)):
+        tg = tg+targets[i]+','
+    
+    message = "BeginMissionSequence;\nPropagate 'oneDayPropagator' "+propagator+"("+tg[:-1]+") {"+targets[0]+".ElapsedDays = "+str(elapsedDays)+"};"
+    
+    f.write(message)
+    f.close()
