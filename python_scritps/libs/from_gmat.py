@@ -68,9 +68,11 @@ def contact_to_csv(file_path):
 
 # -----------------------------------------------------------------------------------------------------------------------------------
 # @input
-#     file_path     path to the folder where you can find the .txt GMAT contact files
+#     contacrt_path
+#     geojason_path
+#     coverage_path
 # @returns
-#     df            pandas data frame with target, observer, start time, end time and durantion of each overpass with contact from the satellite
+#     coverage
 #
 def gen_contact_table(contact_path, geojson_path, coverage_path):
 
@@ -125,13 +127,22 @@ def gen_contact_table(contact_path, geojson_path, coverage_path):
 
 # -----------------------------------------------------------------------------------------------------------------------------------
 # @input
-#     file_path     path to the folder where you can find the .txt GMAT contact files
+#     targets     
+#     elapsedDays
+#     propagator
+#     outputPath
 # @returns
-#     df            pandas data frame with target, observer, start time, end time and durantion of each overpass with contact from the satellite
+#     outputFile
 #
 
-def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],elapsedDays=2,propagator='EarthPointProp'):
-    f = open("mission_sequence.txt", "w")
+def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
+                          elapsedDays=2,
+                          propagator='EarthPointProp',
+                          outputPath='./gmat/phdSim/'):
+
+    outputFile = outputPath+"mission_sequence.txt"
+
+    f = open(outputFile, "w")
     tg = ''
     for i in range(len(targets)):
         tg = tg+targets[i]+','
@@ -140,3 +151,5 @@ def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],elapsedDays=2,propag
     
     f.write(message)
     f.close()
+
+    return(outputFile)
