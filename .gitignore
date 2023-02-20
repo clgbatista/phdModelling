@@ -19,8 +19,10 @@ python_scritps/notebooks/iframe_figures/
 # Jupyter Notebook
 *.ipynb_checkpoints
 
-# log files
+# log and txt files
 *.log
+*.txt
+!requirements.txt
 
 # xmi outputs
 *.xmi
