@@ -37,7 +37,7 @@ move /y %PATH_DATA%\CBERS* %PATH_DATA%\cbers
 move /y %PATH_DATA%\SCD* %PATH_DATA%\scd
 
 echo =========================================================
-echo Final result of %~nx0
+echo IV - Final result of %~nx0
 echo:
 
 if ERRORLEVEL 0 (

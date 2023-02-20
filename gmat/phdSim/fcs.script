@@ -11,11 +11,11 @@ GMAT CONASAT1.DateFormat = UTCGregorian;
 GMAT CONASAT1.Epoch = '01 Jan 2000 12:00:00.000';
 GMAT CONASAT1.CoordinateSystem = EarthMJ2000Eq;
 GMAT CONASAT1.DisplayStateType = Keplerian;
-GMAT CONASAT1.SMA = 6921.000000000018;
-GMAT CONASAT1.ECC = 0.002800000000001691;
+GMAT CONASAT1.SMA = 6921.00000000002;
+GMAT CONASAT1.ECC = 0.002800000000001814;
 GMAT CONASAT1.INC = 97.7;
 GMAT CONASAT1.RAAN = 360;
-GMAT CONASAT1.AOP = 152.5018000000065;
+GMAT CONASAT1.AOP = 152.5017999999976;
 GMAT CONASAT1.TA = 359.9999985212206;
 GMAT CONASAT1.DryMass = 850;
 GMAT CONASAT1.Cd = 2.2;
@@ -55,11 +55,11 @@ GMAT CONASAT2.DateFormat = UTCGregorian;
 GMAT CONASAT2.Epoch = '01 Jan 2000 12:00:00.000';
 GMAT CONASAT2.CoordinateSystem = EarthMJ2000Eq;
 GMAT CONASAT2.DisplayStateType = Keplerian;
-GMAT CONASAT2.SMA = 6921.000000000029;
-GMAT CONASAT2.ECC = 0.002800000000002556;
+GMAT CONASAT2.SMA = 6921.000000000027;
+GMAT CONASAT2.ECC = 0.002800000000002432;
 GMAT CONASAT2.INC = 97.7;
 GMAT CONASAT2.RAAN = 59.99999999999999;
-GMAT CONASAT2.AOP = 152.5017999999965;
+GMAT CONASAT2.AOP = 152.5017999999978;
 GMAT CONASAT2.TA = 359.9999977411273;
 GMAT CONASAT2.DryMass = 850;
 GMAT CONASAT2.Cd = 2.2;
@@ -103,7 +103,7 @@ GMAT CONASAT3.SMA = 6921.000000000022;
 GMAT CONASAT3.ECC = 0.00280000000000206;
 GMAT CONASAT3.INC = 97.7;
 GMAT CONASAT3.RAAN = 120;
-GMAT CONASAT3.AOP = 152.5018000000459;
+GMAT CONASAT3.AOP = 152.5018000000558;
 GMAT CONASAT3.TA = 360;
 GMAT CONASAT3.DryMass = 850;
 GMAT CONASAT3.Cd = 2.2;
@@ -143,8 +143,8 @@ GMAT CONASAT4.DateFormat = UTCGregorian;
 GMAT CONASAT4.Epoch = '01 Jan 2000 12:00:00.000';
 GMAT CONASAT4.CoordinateSystem = EarthMJ2000Eq;
 GMAT CONASAT4.DisplayStateType = Keplerian;
-GMAT CONASAT4.SMA = 6921.000000000025;
-GMAT CONASAT4.ECC = 0.002800000000002552;
+GMAT CONASAT4.SMA = 6921.000000000027;
+GMAT CONASAT4.ECC = 0.002800000000002921;
 GMAT CONASAT4.INC = 97.7;
 GMAT CONASAT4.RAAN = 180;
 GMAT CONASAT4.AOP = 152.5018000000191;
@@ -187,8 +187,8 @@ GMAT CONASAT5.DateFormat = UTCGregorian;
 GMAT CONASAT5.Epoch = '01 Jan 2000 12:00:00.000';
 GMAT CONASAT5.CoordinateSystem = EarthMJ2000Eq;
 GMAT CONASAT5.DisplayStateType = Keplerian;
-GMAT CONASAT5.SMA = 6921.000000000026;
-GMAT CONASAT5.ECC = 0.002800000000002185;
+GMAT CONASAT5.SMA = 6921.000000000028;
+GMAT CONASAT5.ECC = 0.002800000000002308;
 GMAT CONASAT5.INC = 97.7;
 GMAT CONASAT5.RAAN = 240;
 GMAT CONASAT5.AOP = 152.5018000000132;
@@ -232,10 +232,10 @@ GMAT CONASAT6.Epoch = '01 Jan 2000 12:00:00.000';
 GMAT CONASAT6.CoordinateSystem = EarthMJ2000Eq;
 GMAT CONASAT6.DisplayStateType = Keplerian;
 GMAT CONASAT6.SMA = 6921.000000000027;
-GMAT CONASAT6.ECC = 0.002800000000002921;
+GMAT CONASAT6.ECC = 0.002800000000002922;
 GMAT CONASAT6.INC = 97.7;
 GMAT CONASAT6.RAAN = 300;
-GMAT CONASAT6.AOP = 152.5018000000273;
+GMAT CONASAT6.AOP = 152.5018000000238;
 GMAT CONASAT6.TA = 359.9999987925818;
 GMAT CONASAT6.DryMass = 850;
 GMAT CONASAT6.Cd = 2.2;
@@ -742,6 +742,65 @@ GMAT TO.Pressure = 1013.5;
 GMAT TO.Humidity = 55;
 GMAT TO.MinimumElevationAngle = 7;
 
+%----------------------------------------
+%---------- GroundStations
+%----------------------------------------
+
+Create GroundStation ETC;
+GMAT ETC.OrbitColor = Thistle;
+GMAT ETC.TargetColor = DarkGray;
+GMAT ETC.CentralBody = Earth;
+GMAT ETC.StateType = Spherical;
+GMAT ETC.HorizonReference = Sphere;
+GMAT ETC.Location1 = -15.5;
+GMAT ETC.Location2 = 303.99;
+GMAT ETC.Location3 = 0;
+GMAT ETC.Id = 'StationId';
+GMAT ETC.IonosphereModel = 'None';
+GMAT ETC.TroposphereModel = 'None';
+GMAT ETC.DataSource = 'Constant';
+GMAT ETC.Temperature = 295.1;
+GMAT ETC.Pressure = 1013.5;
+GMAT ETC.Humidity = 55;
+GMAT ETC.MinimumElevationAngle = 7;
+
+Create GroundStation ETA;
+GMAT ETA.OrbitColor = Thistle;
+GMAT ETA.TargetColor = DarkGray;
+GMAT ETA.CentralBody = Earth;
+GMAT ETA.StateType = Spherical;
+GMAT ETA.HorizonReference = Sphere;
+GMAT ETA.Location1 = -2.33;
+GMAT ETA.Location2 = 315.96;
+GMAT ETA.Location3 = 0;
+GMAT ETA.Id = 'StationId';
+GMAT ETA.IonosphereModel = 'None';
+GMAT ETA.TroposphereModel = 'None';
+GMAT ETA.DataSource = 'Constant';
+GMAT ETA.Temperature = 295.1;
+GMAT ETA.Pressure = 1013.5;
+GMAT ETA.Humidity = 55;
+GMAT ETA.MinimumElevationAngle = 7;
+
+Create GroundStation EMMN;
+GMAT EMMN.OrbitColor = Thistle;
+GMAT EMMN.TargetColor = DarkGray;
+GMAT EMMN.CentralBody = Earth;
+GMAT EMMN.StateType = Spherical;
+GMAT EMMN.HorizonReference = Sphere;
+GMAT EMMN.Location1 = -5.835238000000001;
+GMAT EMMN.Location2 = 324.790715;
+GMAT EMMN.Location3 = 0.051;
+GMAT EMMN.Id = 'StationId';
+GMAT EMMN.IonosphereModel = 'None';
+GMAT EMMN.TroposphereModel = 'None';
+GMAT EMMN.DataSource = 'Constant';
+GMAT EMMN.Temperature = 295.1;
+GMAT EMMN.Pressure = 1013.5;
+GMAT EMMN.Humidity = 55;
+GMAT EMMN.MinimumElevationAngle = 7;
+
+
 
 
 
@@ -803,7 +862,7 @@ GMAT CONASAT1Contact.UseStellarAberration = true;
 GMAT CONASAT1Contact.WriteReport = true;
 GMAT CONASAT1Contact.RunMode = Automatic;
 GMAT CONASAT1Contact.UseEntireInterval = true;
-GMAT CONASAT1Contact.Observers = {AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
+GMAT CONASAT1Contact.Observers = {AC, AL, AM, AP, BA, CE, EMMN, ES, ETC, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT CONASAT1Contact.LightTimeDirection = Transmit;
 
 Create ContactLocator CONASAT2Contact;
@@ -818,7 +877,7 @@ GMAT CONASAT2Contact.UseStellarAberration = true;
 GMAT CONASAT2Contact.WriteReport = true;
 GMAT CONASAT2Contact.RunMode = Automatic;
 GMAT CONASAT2Contact.UseEntireInterval = true;
-GMAT CONASAT2Contact.Observers = {AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
+GMAT CONASAT2Contact.Observers = {AC, AL, AM, AP, BA, CE, EMMN, ES, ETC, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT CONASAT2Contact.LightTimeDirection = Transmit;
 
 Create ContactLocator CONASAT3Contact;
@@ -833,7 +892,7 @@ GMAT CONASAT3Contact.UseStellarAberration = true;
 GMAT CONASAT3Contact.WriteReport = true;
 GMAT CONASAT3Contact.RunMode = Automatic;
 GMAT CONASAT3Contact.UseEntireInterval = true;
-GMAT CONASAT3Contact.Observers = {AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
+GMAT CONASAT3Contact.Observers = {AC, AL, AM, AP, BA, CE, EMMN, ES, ETC, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT CONASAT3Contact.LightTimeDirection = Transmit;
 
 Create ContactLocator CONASAT4Contact;
@@ -848,7 +907,7 @@ GMAT CONASAT4Contact.UseStellarAberration = true;
 GMAT CONASAT4Contact.WriteReport = true;
 GMAT CONASAT4Contact.RunMode = Automatic;
 GMAT CONASAT4Contact.UseEntireInterval = true;
-GMAT CONASAT4Contact.Observers = {AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
+GMAT CONASAT4Contact.Observers = {AC, AL, AM, AP, BA, CE, EMMN, ES, ETC, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT CONASAT4Contact.LightTimeDirection = Transmit;
 
 Create ContactLocator CONASAT5Contact;
@@ -863,7 +922,7 @@ GMAT CONASAT5Contact.UseStellarAberration = true;
 GMAT CONASAT5Contact.WriteReport = true;
 GMAT CONASAT5Contact.RunMode = Automatic;
 GMAT CONASAT5Contact.UseEntireInterval = true;
-GMAT CONASAT5Contact.Observers = {AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
+GMAT CONASAT5Contact.Observers = {AC, AL, AM, AP, BA, CE, EMMN, ES, ETC, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT CONASAT5Contact.LightTimeDirection = Transmit;
 
 Create ContactLocator CONASAT6Contact;
@@ -878,7 +937,7 @@ GMAT CONASAT6Contact.UseStellarAberration = true;
 GMAT CONASAT6Contact.WriteReport = true;
 GMAT CONASAT6Contact.RunMode = Automatic;
 GMAT CONASAT6Contact.UseEntireInterval = true;
-GMAT CONASAT6Contact.Observers = {AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
+GMAT CONASAT6Contact.Observers = {AC, AL, AM, AP, BA, CE, EMMN, ES, ETC, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT CONASAT6Contact.LightTimeDirection = Transmit;
 
 %----------------------------------------
@@ -887,9 +946,9 @@ GMAT CONASAT6Contact.LightTimeDirection = Transmit;
 
 Create OrbitView DefaultOrbitView;
 GMAT DefaultOrbitView.SolverIterations = Current;
-GMAT DefaultOrbitView.UpperLeft = [ 0.06951871657754011 0.08659217877094973 ];
-GMAT DefaultOrbitView.Size = [ 0.8774914924647546 1.001862197392924 ];
-GMAT DefaultOrbitView.RelativeZOrder = 33;
+GMAT DefaultOrbitView.UpperLeft = [ 0.06926605504587156 0.0856610800744879 ];
+GMAT DefaultOrbitView.Size = [ 0.8775229357798165 1.000931098696462 ];
+GMAT DefaultOrbitView.RelativeZOrder = 77;
 GMAT DefaultOrbitView.Maximized = false;
 GMAT DefaultOrbitView.Add = {CONASAT1, CONASAT2, CONASAT3, CONASAT4, CONASAT5, CONASAT6, Earth};
 GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
@@ -919,9 +978,9 @@ GMAT DefaultOrbitView.EnableConstellations = On;
 
 Create GroundTrackPlot DefaultGroundTrackPlot;
 GMAT DefaultGroundTrackPlot.SolverIterations = Current;
-GMAT DefaultGroundTrackPlot.UpperLeft = [ -0.001944579484686436 0.0297951582867784 ];
-GMAT DefaultGroundTrackPlot.Size = [ 0.5376762275157997 0.5921787709497207 ];
-GMAT DefaultGroundTrackPlot.RelativeZOrder = 5;
+GMAT DefaultGroundTrackPlot.UpperLeft = [ -0.001834862385321101 0.02886405959031657 ];
+GMAT DefaultGroundTrackPlot.Size = [ 0.5376146788990825 0.5921787709497207 ];
+GMAT DefaultGroundTrackPlot.RelativeZOrder = 73;
 GMAT DefaultGroundTrackPlot.Maximized = false;
 GMAT DefaultGroundTrackPlot.Add = {AC, AL, AM, AP, BA, CE, CONASAT1, CONASAT2, CONASAT3, CONASAT4, CONASAT5, CONASAT6, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO};
 GMAT DefaultGroundTrackPlot.DataCollectFrequency = 1;
@@ -938,4 +997,4 @@ GMAT DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
 %----------------------------------------
 
 BeginMissionSequence;
-Propagate 'oneDayPropagator' EarthPointProp(CONASAT1, CONASAT2, CONASAT3, CONASAT4, CONASAT5, CONASAT6) {CONASAT1.ElapsedDays = 1};
+Propagate 'oneDayPropagator' EarthPointProp(CONASAT1, CONASAT2, CONASAT3, CONASAT4, CONASAT5, CONASAT6) {CONASAT1.ElapsedDays = 2};

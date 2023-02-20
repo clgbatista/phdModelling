@@ -1,0 +1,165 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2022-03-04 11:59:33
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+#Include './spacecraft.txt'
+
+
+%----------------------------------------
+%---------- GroundStations
+%----------------------------------------
+
+#Include './ground_stations.txt'
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel EarthPointProp_ForceModel;
+GMAT EarthPointProp_ForceModel.CentralBody = Earth;
+GMAT EarthPointProp_ForceModel.PointMasses = {Earth};
+GMAT EarthPointProp_ForceModel.Drag = None;
+GMAT EarthPointProp_ForceModel.SRP = Off;
+GMAT EarthPointProp_ForceModel.RelativisticCorrection = Off;
+GMAT EarthPointProp_ForceModel.ErrorControl = RSSStep;
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator EarthPointProp;
+GMAT EarthPointProp.FM = EarthPointProp_ForceModel;
+GMAT EarthPointProp.Type = RungeKutta89;
+GMAT EarthPointProp.InitialStepSize = 60;
+GMAT EarthPointProp.Accuracy = 9.999999999999999e-12;
+GMAT EarthPointProp.MinStep = 0.001;
+GMAT EarthPointProp.MaxStep = 2700;
+GMAT EarthPointProp.MaxStepAttempts = 50;
+GMAT EarthPointProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- EventLocators
+%----------------------------------------
+
+Create EclipseLocator EclipseLocator1;
+GMAT EclipseLocator1.Spacecraft = SCD1;
+GMAT EclipseLocator1.Filename = 'EclipseLocator1.txt';
+GMAT EclipseLocator1.OccultingBodies = {Earth, Luna};
+GMAT EclipseLocator1.InputEpochFormat = 'TAIModJulian';
+GMAT EclipseLocator1.InitialEpoch = '21545';
+GMAT EclipseLocator1.StepSize = 10;
+GMAT EclipseLocator1.FinalEpoch = '21545.138';
+GMAT EclipseLocator1.UseLightTimeDelay = true;
+GMAT EclipseLocator1.UseStellarAberration = true;
+GMAT EclipseLocator1.WriteReport = true;
+GMAT EclipseLocator1.RunMode = Automatic;
+GMAT EclipseLocator1.UseEntireInterval = true;
+GMAT EclipseLocator1.EclipseTypes = {'Umbra', 'Penumbra', 'Antumbra'};
+
+Create ContactLocator SCD1Contact;
+GMAT SCD1Contact.Target = SCD1;
+GMAT SCD1Contact.Filename = 'SCD1Contact.txt';
+GMAT SCD1Contact.InputEpochFormat = 'TAIModJulian';
+GMAT SCD1Contact.InitialEpoch = '21545';
+GMAT SCD1Contact.StepSize = 600;
+GMAT SCD1Contact.FinalEpoch = '21545.138';
+GMAT SCD1Contact.UseLightTimeDelay = true;
+GMAT SCD1Contact.UseStellarAberration = true;
+GMAT SCD1Contact.WriteReport = true;
+GMAT SCD1Contact.RunMode = Automatic;
+GMAT SCD1Contact.UseEntireInterval = true;
+GMAT SCD1Contact.Observers = {EMMN, ETA, ETC};
+GMAT SCD1Contact.LightTimeDirection = Transmit;
+
+Create ContactLocator SCD2Contact;
+GMAT SCD2Contact.Target = SCD2;
+GMAT SCD2Contact.Filename = 'SCD2Contact.txt';
+GMAT SCD2Contact.InputEpochFormat = 'TAIModJulian';
+GMAT SCD2Contact.InitialEpoch = '21545';
+GMAT SCD2Contact.StepSize = 600;
+GMAT SCD2Contact.FinalEpoch = '21545.138';
+GMAT SCD2Contact.UseLightTimeDelay = true;
+GMAT SCD2Contact.UseStellarAberration = true;
+GMAT SCD2Contact.WriteReport = true;
+GMAT SCD2Contact.RunMode = Automatic;
+GMAT SCD2Contact.UseEntireInterval = true;
+GMAT SCD2Contact.Observers = {EMMN, ETA, ETC};
+GMAT SCD2Contact.LightTimeDirection = Transmit;
+
+Create ContactLocator CBERSContact;
+GMAT CBERSContact.Target = CBERS4A;
+GMAT CBERSContact.Filename = 'CBERSContact.txt';
+GMAT CBERSContact.InputEpochFormat = 'TAIModJulian';
+GMAT CBERSContact.InitialEpoch = '21545';
+GMAT CBERSContact.StepSize = 600;
+GMAT CBERSContact.FinalEpoch = '21545.138';
+GMAT CBERSContact.UseLightTimeDelay = true;
+GMAT CBERSContact.UseStellarAberration = true;
+GMAT CBERSContact.WriteReport = true;
+GMAT CBERSContact.RunMode = Automatic;
+GMAT CBERSContact.UseEntireInterval = true;
+GMAT CBERSContact.Observers = {EMMN, ETA, ETC};
+GMAT CBERSContact.LightTimeDirection = Transmit;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+GMAT DefaultOrbitView.SolverIterations = Current;
+GMAT DefaultOrbitView.UpperLeft = [ 0 0 ];
+GMAT DefaultOrbitView.Size = [ 0.5 0.4502487562189055 ];
+GMAT DefaultOrbitView.RelativeZOrder = 11;
+GMAT DefaultOrbitView.Maximized = false;
+GMAT DefaultOrbitView.Add = {SCD1, SCD2, CBERS4A, Earth};
+GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.DrawObject = [ true true true true ];
+GMAT DefaultOrbitView.DataCollectFrequency = 1;
+GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.ShowPlot = true;
+GMAT DefaultOrbitView.MaxPlotPoints = 20000;
+GMAT DefaultOrbitView.ShowLabels = true;
+GMAT DefaultOrbitView.ViewPointReference = Earth;
+GMAT DefaultOrbitView.ViewPointVector = [ 30000 0 0 ];
+GMAT DefaultOrbitView.ViewDirection = Earth;
+GMAT DefaultOrbitView.ViewScaleFactor = 1;
+GMAT DefaultOrbitView.ViewUpCoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.ViewUpAxis = Z;
+GMAT DefaultOrbitView.EclipticPlane = Off;
+GMAT DefaultOrbitView.XYPlane = Off;
+GMAT DefaultOrbitView.WireFrame = Off;
+GMAT DefaultOrbitView.Axes = On;
+GMAT DefaultOrbitView.Grid = Off;
+GMAT DefaultOrbitView.SunLine = Off;
+GMAT DefaultOrbitView.UseInitialView = On;
+GMAT DefaultOrbitView.StarCount = 7000;
+GMAT DefaultOrbitView.EnableStars = Off;
+GMAT DefaultOrbitView.EnableConstellations = On;
+
+Create GroundTrackPlot DefaultGroundTrackPlot;
+GMAT DefaultGroundTrackPlot.SolverIterations = Current;
+GMAT DefaultGroundTrackPlot.UpperLeft = [ 0 0.4415422885572139 ];
+GMAT DefaultGroundTrackPlot.Size = [ 0.5 0.4502487562189055 ];
+GMAT DefaultGroundTrackPlot.RelativeZOrder = 7;
+GMAT DefaultGroundTrackPlot.Maximized = false;
+GMAT DefaultGroundTrackPlot.Add = {CBERS4A, EMMN, ETA, ETC, SCD1, SCD2};
+GMAT DefaultGroundTrackPlot.DataCollectFrequency = 1;
+GMAT DefaultGroundTrackPlot.UpdatePlotFrequency = 50;
+GMAT DefaultGroundTrackPlot.NumPointsToRedraw = 0;
+GMAT DefaultGroundTrackPlot.ShowPlot = true;
+GMAT DefaultGroundTrackPlot.MaxPlotPoints = 20000;
+GMAT DefaultGroundTrackPlot.CentralBody = Earth;
+GMAT DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+Propagate 'oneDayPropagator' EarthPointProp(SCD1, SCD2, CBERS4A) {CBERS4A.ElapsedDays = 2};

@@ -1,0 +1,20 @@
+@startuml architectural_include
+
+!include architecture_elements.plantuml
+
+skinparam Linetype ortho
+
+    FederatedCubeSatSystem ^-- SEGMENTS
+    FederatedCubeSatSystem ^-- STAKEHOLDER
+    FederatedCubeSatSystem ^-- MISSION
+
+    SEGMENTS ^-- SPACESEGMENT
+    SEGMENTS ^-- GROUNDSEGMENT
+    SEGMENTS ^-- USERSEGMENT
+    
+    SPACESEGMENT ^-- SATELLITE
+    
+    GROUNDSEGMENT ^-- MISSIONCONTROL
+    GROUNDSEGMENT ^-- GROUNDSTATION
+
+@enduml

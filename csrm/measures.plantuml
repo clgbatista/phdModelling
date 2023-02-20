@@ -48,7 +48,6 @@ frame "FCS Tech Measures" as measures {
             +summary
             +id
     }
-    }
 
     frame "Constituent System" as cs {
             object TechnicalPerformanceMeasures {
@@ -67,6 +66,8 @@ frame "FCS Tech Measures" as measures {
         TechnicalPerformanceMeasures ^-- accessTime
         TechnicalPerformanceMeasures ^-- engagementTime 
         TechnicalPerformanceMeasures ^-- coverage 
+
+    }
 
     }
 

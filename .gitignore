@@ -19,6 +19,12 @@ python_scritps/notebooks/iframe_figures/
 # Jupyter Notebook
 *.ipynb_checkpoints
 
+# log files
+*.log
+
+# xmi outputs
+*.xmi
+
 # images and html
 *.png
 *.svg
