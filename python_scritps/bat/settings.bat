@@ -1,6 +1,7 @@
 
 @SET GMAT=C:\Users\carlos.batista\Documents\.app\GMAT\bin\GMAT.exe
 
+@REM PATH TO DIFERENT FILES LOCATIONS
 @SET PATH_GMAT_FILES=C:\Users\carlos.batista\Documents\.app\GMAT\output
 @SET PATH_DATA=C:\Users\carlos.batista\Documents\.coding\plantuml\phdModelling\python_scritps\data
 @SET PATH_SCRIPT=C:\Users\carlos.batista\Documents\.coding\gmat\phdSim

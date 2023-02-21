@@ -11,3 +11,4 @@ outputFile = gmat.mission_sequence_file(targets=targets,
 
 f = open(outputFile, "r")
 print(f.read())
+f.close()
