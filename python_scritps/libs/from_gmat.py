@@ -153,3 +153,13 @@ def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
     f.close()
 
     return(outputFile)
+
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     targets     
+#     elapsedDays
+#     propagator
+#     outputPath
+# @returns
+#     outputFile
+#
