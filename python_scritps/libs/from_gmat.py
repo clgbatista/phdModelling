@@ -275,3 +275,51 @@ def propagator_file(propagator,
         f.close()
 
     return(outputFile)
+
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     object
+#     path_to_json
+# @returns
+#     outputFile
+#
+def from_json(object,path_to_json,path_to_save):
+
+    if object == "Spacecraft":
+        element = "target"
+        sub_element = "keplerianElements"
+    elif object == "GroundStation":
+        element = "observer"
+        sub_element = "location"
+    elif object == "ForceModel" :
+        element = "forceModel"
+        sub_element = "none"
+    elif object == "Propagator" :
+        element = "propagator"
+        sub_element = "none"
+    else :
+        element = "none"
+        sub_element = "none"
+    
+    f = open(path_to_json)
+    data = json.load(f)
+    f.close()
+
+    outputFile = path_to_save+object+"_"+data[element]+".txt"
+
+    f = open(outputFile, "w")
+    f.write("Create "+object+" "+data[element]+";\n")
+    f.close()
+
+    for i in data["parameters"] :
+        f = open(outputFile,"a")
+        if i != sub_element:
+            info = i+" = "+str(data["parameters"][i])
+            f.write("GMAT "+data[element]+"."+info+";\n")
+        else :
+            for j in data["parameters"][sub_element] :
+                info = j+" = "+str(data["parameters"][sub_element][j])
+                f.write("GMAT "+data[element]+"."+info+";\n")
+        f.close()
+
+    return(outputFile)
