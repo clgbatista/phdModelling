@@ -161,19 +161,21 @@ def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
 # @returns
 #     outputFile
 #
-def spacecraft_file(target,path_to_json):
-    outpuFile = "./gmat/phdSim/spacecraft_"+target.lower()+".txt"
+def spacecraft_file(target,
+                    path_to_json):
+
+    outputFile = "./gmat/phdSim/spacecraft_"+target.lower()+".txt"
 
     f = open(path_to_json)
     data = json.load(f)
     f.close()
 
-    f = open(outpuFile, "w")
+    f = open(outputFile, "w")
     f.write("Create Spacecraft "+target+";\n")
     f.close()
 
     for i in data["parameters"] :
-        f = open(outpuFile,"a")
+        f = open(outputFile,"a")
         if i != "keplerianElements":
             info = i+" = "+str(data["parameters"][i])
             f.write("GMAT "+data["target"]+"."+info+";\n")
@@ -183,4 +185,37 @@ def spacecraft_file(target,path_to_json):
                 f.write("GMAT "+data["target"]+"."+info+";\n")
         f.close()
 
-    return(outpuFile)
+    return(outputFile)
+
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     observer
+#     path_to_json
+# @returns
+#     outputFile
+#
+def ground_station_file(observer,
+                        path_to_json):
+
+    outputFile = "./gmat/phdSim/ground_station_"+observer.lower()+".txt"
+
+    f = open(path_to_json)
+    data = json.load(f)
+    f.close()
+
+    f = open(outputFile, "w")
+    f.write("Create GroundStation "+observer+";\n")
+    f.close()
+
+    for i in data["parameters"] :
+        f = open(outputFile,"a")
+        if i != "location":
+            info = i+" = "+str(data["parameters"][i])
+            f.write("GMAT "+data["observer"]+"."+info+";\n")
+        else :
+            for local in data["parameters"]["location"] :
+                info = local+" = "+str(data["parameters"]["location"][local])
+                f.write("GMAT "+data["observer"]+"."+info+";\n")
+        f.close()
+
+    return(outputFile)

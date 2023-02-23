@@ -1,0 +1,23 @@
+{
+    "observer":"ETC",
+    "parameters": {
+        "OrbitColor" : "Thistle",
+        "TargetColor" : "DarkGray",
+        "CentralBody" : "Earth",
+        "StateType" : "Spherical",
+        "HorizonReference" : "Sphere",
+        "location" : {
+            "Location1" : "-15.5",
+            "Location2" : "303.99",
+            "Location3" : "0"
+        },
+        "Id" : "'StationId'",
+        "IonosphereModel" : "'None'",
+        "TroposphereModel" : "'None'",
+        "DataSource" : "'Constant'",
+        "Temperature" : "295.1",
+        "Pressure" : "1013.5",
+        "Humidity" : "55",
+        "MinimumElevationAngle" : "7"
+    }
+}
