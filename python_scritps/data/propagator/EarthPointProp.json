@@ -1,0 +1,13 @@
+{
+    "propagator" : "EarthPointProp",
+    "parameters" : {
+        "FM" : "EarthPointProp_ForceModel",
+        "Type" : "RungeKutta89",
+        "InitialStepSize" : "60",
+        "Accuracy" : "9.999999999999999e-12",
+        "MinStep" : "0.001",
+        "MaxStep" : "2700",
+        "MaxStepAttempts" : "50",
+        "StopIfAccuracyIsViolated" : "true"
+    }
+}

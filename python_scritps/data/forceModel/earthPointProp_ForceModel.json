@@ -1,0 +1,11 @@
+{
+    "forceModel" : "EarthPointProp_ForceModel",
+    "parameters" : {
+        "CentralBody" : "Earth",
+        "PointMasses" : "{Earth}",
+        "Drag" : "None",
+        "SRP" : "Off",
+        "RelativisticCorrection" : "Off",
+        "ErrorControl" : "RSSStep"
+    }
+}
