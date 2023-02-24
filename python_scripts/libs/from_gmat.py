@@ -138,7 +138,7 @@ def gen_contact_table(contact_path, geojson_path, coverage_path):
 def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
                           elapsedDays=2,
                           propagator='EarthPointProp',
-                          name_propagator='oneDayPropagator'):
+                          sequence='oneDayPropagator'):
 
     outputFile = "./gmat/phdSim/mission_sequence.txt"
 
@@ -147,132 +147,10 @@ def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
     for i in range(len(targets)):
         tg = tg+targets[i]+','
     
-    message = "BeginMissionSequence;\nPropagate '"+name_propagator+"' "+propagator+"("+tg[:-1]+") {"+targets[0]+".ElapsedDays = "+str(elapsedDays)+"};"
+    message = "BeginMissionSequence;\nPropagate '"+sequence+"' "+propagator+"("+tg[:-1]+") {"+targets[0]+".ElapsedDays = "+str(elapsedDays)+"};"
     
     f.write(message)
     f.close()
-
-    return(outputFile)
-
-# -----------------------------------------------------------------------------------------------------------------------------------
-# @input
-#     target
-#     path_to_json
-# @returns
-#     outputFile
-#
-def spacecraft_file(target,
-                    path_to_json):
-
-    outputFile = "./gmat/phdSim/spacecraft_"+target.lower()+".txt"
-
-    f = open(path_to_json)
-    data = json.load(f)
-    f.close()
-
-    f = open(outputFile, "w")
-    f.write("Create Spacecraft "+data["target"]+";\n")
-    f.close()
-
-    for i in data["parameters"] :
-        f = open(outputFile,"a")
-        if i != "keplerianElements":
-            info = i+" = "+str(data["parameters"][i])
-            f.write("GMAT "+data["target"]+"."+info+";\n")
-        else :
-            for kepler in data["parameters"]["keplerianElements"] :
-                info = kepler+" = "+str(data["parameters"]["keplerianElements"][kepler])
-                f.write("GMAT "+data["target"]+"."+info+";\n")
-        f.close()
-
-    return(outputFile)
-
-# -----------------------------------------------------------------------------------------------------------------------------------
-# @input
-#     observer
-#     path_to_json
-# @returns
-#     outputFile
-#
-def ground_station_file(observer,
-                        path_to_json):
-
-    outputFile = "./gmat/phdSim/ground_station_"+observer.lower()+".txt"
-
-    f = open(path_to_json)
-    data = json.load(f)
-    f.close()
-
-    f = open(outputFile, "w")
-    f.write("Create GroundStation "+data["observer"]+";\n")
-    f.close()
-
-    for i in data["parameters"] :
-        f = open(outputFile,"a")
-        if i != "location":
-            info = i+" = "+str(data["parameters"][i])
-            f.write("GMAT "+data["observer"]+"."+info+";\n")
-        else :
-            for local in data["parameters"]["location"] :
-                info = local+" = "+str(data["parameters"]["location"][local])
-                f.write("GMAT "+data["observer"]+"."+info+";\n")
-        f.close()
-
-    return(outputFile)
-
-# -----------------------------------------------------------------------------------------------------------------------------------
-# @input
-#     forceModel
-#     path_to_json
-# @returns
-#     outputFile
-#
-def force_model_file(forceModel,
-                     path_to_json):
-
-    outputFile = "./gmat/phdSim/force_model_"+forceModel.lower()+".txt"
-
-    f = open(path_to_json)
-    data = json.load(f)
-    f.close()
-
-    f = open(outputFile, "w")
-    f.write("Create ForceModel "+data["forceModel"]+";\n")
-    f.close()
-
-    for i in data["parameters"] :
-        f = open(outputFile,"a")
-        info = i+" = "+str(data["parameters"][i])
-        f.write("GMAT "+data["forceModel"]+"."+info+";\n")
-        f.close()
-
-    return(outputFile)
-
-# -----------------------------------------------------------------------------------------------------------------------------------
-# @input
-#     propagator
-#     path_to_json
-# @returns
-#     outputFile
-#
-def propagator_file(propagator,
-                     path_to_json):
-
-    outputFile = "./gmat/phdSim/force_model_"+propagator.lower()+".txt"
-
-    f = open(path_to_json)
-    data = json.load(f)
-    f.close()
-
-    f = open(outputFile, "w")
-    f.write("Create Propagator "+data["propagator"]+";\n")
-    f.close()
-
-    for i in data["parameters"] :
-        f = open(outputFile,"a")
-        info = i+" = "+str(data["parameters"][i])
-        f.write("GMAT "+data["propagator"]+"."+info+";\n")
-        f.close()
 
     return(outputFile)
 
