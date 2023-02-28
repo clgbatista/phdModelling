@@ -1,0 +1,27 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 24/02/2023 14:00:05
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+# Include 'Spacecraft_SCD1.txt' 
+
+%----------------------------------------
+%---------- GroundStation
+%----------------------------------------
+# Include 'GroundStation_ETC.txt' 
+
+%----------------------------------------
+%---------- ForceModel
+%----------------------------------------
+# Include 'ForceModel_EarthPointProp_ForceModel.txt' 
+
+%----------------------------------------
+%---------- Propagator
+%----------------------------------------
+# Include 'Propagator_EarthPointProp.txt' 
+
+%----------------------------------------
+%---------- MissionSequence
+%----------------------------------------
+# Include 'mission_sequence.txt' 

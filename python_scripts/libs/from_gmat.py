@@ -19,6 +19,7 @@ from importlib.metadata import files
 import re
 import pandas as pd
 import json
+from datetime import datetime
 
 # -----------------------------------------------------------------------------------------------------------------------------------
 # @input
@@ -152,7 +153,7 @@ def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
     f.write(message)
     f.close()
 
-    return(outputFile)
+    return(outputFile,"mission_sequence.txt")
 
 # -----------------------------------------------------------------------------------------------------------------------------------
 # @input
@@ -200,4 +201,25 @@ def from_json(object,path_to_json,path_to_save):
                 f.write("GMAT "+data[element]+"."+info+";\n")
         f.close()
 
-    return(outputFile)
+    return(outputFile,object+"_"+data[element]+".txt")
+
+# -----------------------------------------------------------------------------------------------------------------------------------
+# @input
+#     file
+#     msg
+# @returns
+#     outputFile
+#
+def write_header(file,msg="none"):
+
+    date_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
+    if msg == "none" :
+        file.write("%General Mission Analysis Tool(GMAT) Script\n")
+        file.write("%Created: "+date_time+"\n")
+
+    else :
+        file.write("\n")
+        file.write("%----------------------------------------\n")
+        file.write("%---------- "+msg+"\n")
+        file.write("%----------------------------------------\n")
