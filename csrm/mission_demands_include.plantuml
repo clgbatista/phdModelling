@@ -1,0 +1,14 @@
+@startuml modelprofile
+allowmixing
+
+package mission(golds,T) as ms {
+
+    package demand(coverage,golds,T) {
+        json ETC {
+            !include etc.json
+            }
+    }
+
+}
+
+@enduml
