@@ -18,6 +18,7 @@ python_scritps/notebooks/iframe_figures/
 
 # Jupyter Notebook
 *.ipynb_checkpoints
+*.ipynb
 
 # log and txt files
 *.log

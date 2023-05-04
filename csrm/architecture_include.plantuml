@@ -1,8 +1,12 @@
 @startuml architectural_include
 
-!include architecture_elements.plantuml
+' !include architecture_elements.plantuml
 
 skinparam Linetype ortho
+
+frame "FCS Achitecture Structure" {
+
+    !include architecture_elements.plantuml
 
     FederatedCubeSatSystem ^-- SEGMENTS
     FederatedCubeSatSystem ^-- STAKEHOLDER
@@ -16,5 +20,7 @@ skinparam Linetype ortho
     
     GROUNDSEGMENT ^-- MISSIONCONTROL
     GROUNDSEGMENT ^-- GROUNDSTATION
+
+}
 
 @enduml

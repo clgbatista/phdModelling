@@ -2,7 +2,7 @@
 
 skinparam Linetype ortho
 
-frame "FCS Achitecture Structure" {
+' frame "FCS Achitecture Structure" {
 
     object FederatedCubeSatSystem {
         +performanceRequirements
@@ -62,6 +62,6 @@ frame "FCS Achitecture Structure" {
         
     }
 
-}
+' }
 
 @enduml

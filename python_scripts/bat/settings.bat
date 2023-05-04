@@ -1,5 +1,6 @@
 
-@SET GMAT=C:\Users\carlos.batista\Documents\.app\GMAT\2020a\bin\GMAT.exe
+@REM @SET GMAT=C:\Users\carlos.batista\Documents\.app\GMAT\2020a\bin\GMAT.exe
+@SET GMAT=C:\Users\carlos.batista\Documents\.app\GMAT\R2022a\bin\GMAT.exe
 
 @REM PATH TO DIFERENT FILES LOCATIONS
 @SET PATH_GMAT_FILES=C:\Users\carlos.batista\Documents\.app\GMAT\2020a\output
