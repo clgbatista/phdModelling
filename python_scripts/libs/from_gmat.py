@@ -162,7 +162,14 @@ def mission_sequence_file(targets=['SCD1','SCD2','CBERS4A'],
 # @returns
 #     outputFile
 #
-def from_json(object,path_to_json,path_to_save):
+def from_json(path_to_json="./json/template.json",
+              path_to_save='./scripts/'):
+
+    f = open(path_to_json)
+    data = json.load(f)
+    f.close()
+
+    object = data["object"]
 
     if object == "Spacecraft":
         element = "target"
@@ -179,10 +186,6 @@ def from_json(object,path_to_json,path_to_save):
     else :
         element = "none"
         sub_element = "none"
-    
-    f = open(path_to_json)
-    data = json.load(f)
-    f.close()
 
     outputFile = path_to_save+object+"_"+data[element]+".txt"
 
@@ -213,10 +216,12 @@ def from_json(object,path_to_json,path_to_save):
 def write_header(file,msg="none"):
 
     date_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    author = '@clgbatista'
 
     if msg == "none" :
-        file.write("%General Mission Analysis Tool(GMAT) Script\n")
-        file.write("%Created: "+date_time+"\n")
+        file.write("% General Mission Analysis Tool(GMAT) Script\n")
+        file.write("% Created on: "+date_time+"\n")
+        file.write("% Created by: "+author+"\n")
 
     else :
         file.write("\n")
